@@ -1,0 +1,124 @@
+{
+  "users": {
+    "_model": "User",
+    "homer": {
+      "contributedPOIs": 1,
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "fullName": "Homer Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "isAdmin": false,
+      "customCategories": 0
+    },
+    "marge": {
+      "customCategories": 0,
+      "contributedPOIs": 1,
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "fullName": "Marge Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "isAdmin": false
+    },
+    "bart": {
+      "customCategories": 1,
+      "contributedPOIs": 3,
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "fullName": "Bart Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "isAdmin": false
+    },
+    "admin": {
+      "customCategories": 0,
+      "contributedPOIs": 0,
+      "firstName": "Ionut",
+      "lastName": "Tifrea",
+      "fullName": "Ionut Tifrea",
+      "email": "admin@simpson.com",
+      "password": "secret",
+      "isAdmin": true
+    }
+  },
+  "categories": {
+    "_model": "Category",
+    "dining": {
+      "name": "Dining",
+      "description": "",
+      "contributor": "->users.admin"
+    },
+    "park": {
+      "name": "Park",
+      "description": "",
+      "contributor": "->users.admin"
+    },
+    "walk": {
+      "name": "Walk",
+      "description": "",
+      "contributor": "->users.admin"
+    },
+    "historicSite": {
+      "name": "Historic Site",
+      "description": "",
+      "contributor": "->users.admin"
+
+      }
+    },
+    "pointsOfInterest": {
+      "_model": "PointOfInterest",
+      "one": {
+        "categories": [
+          "->categories.historicSite"
+        ],
+        "imageURL": [
+          "https://res.cloudinary.com/aneroma/image/upload/v1616527176/turkey-istanbul-aya-sofya_pjppig.jpg",
+          "https://res.cloudinary.com/aneroma/image/upload/v1616526772/egypt_xskflg.jpg"
+        ],
+        "name": "Egypt piramids",
+        "description": "Go there!",
+        "location": {
+          "lat": "2.3243",
+          "lon": "35.4343"
+        },
+        "contributor": "->users.bart",
+        "thumbnailURL": "https://res.cloudinary.com/aneroma/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1616527176/turkey-istanbul-aya-sofya_pjppig.jpg"
+      },
+      "two": {
+        "categories": [
+          "->categories.walk",
+          "->categories.historicSite"
+        ],
+        "imageURL": [
+          "https://res.cloudinary.com/aneroma/image/upload/v1616526783/carja-peak_yxwixt.jpg",
+          "",
+          ""
+        ],
+        "name": "Parang Mountains",
+        "description": "The nicest mountain in Petrosani",
+        "location": {
+          "lat": "32.324",
+          "lon": "56.324"
+        },
+        "contributor": "->users.homer",
+        "thumbnailURL": "https://res.cloudinary.com/aneroma/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1616526783/carja-peak_yxwixt.jpg"
+      },
+      "three": {
+        "categories": [
+          "->categories.dining"
+        ],
+        "imageURL": [
+          ""
+        ],
+        "name": "Giacomo's Trattoria",
+        "description": "Italian food.",
+        "location": {
+          "lat": "22.111",
+          "lon": "-1.4456"
+        },
+        "contributor": "->users.homer",
+        "thumbnailURL": "https://res.cloudinary.com/aneroma/image/upload/v1616526188/trattoria_xup1lc.jpg"
+      }
+    }
+  }

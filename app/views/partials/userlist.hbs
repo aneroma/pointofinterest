@@ -1,0 +1,26 @@
+<article class="ten wide column">
+    <table class="ui celled table segment">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>POI Contributions</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each users}}
+            <tr>
+                <td> {{firstName}} {{lastName}} </td>
+                <td> {{contributedPOIs.length}} </td>
+                <td class="center aligned">
+                    <a href="/homeadmin/deleteuser/{{_id}}">
+                        <h1>
+                            <i class="red trash alternate icon"></i>
+                        </h1>
+                    </a>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</article>
